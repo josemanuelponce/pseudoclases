@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soldadito</title>
     <style>
-    body{
+     body{
     background-color:gray;
     text-align: center;
     max-width: 600px;
@@ -34,6 +34,98 @@
     div:nth-child(even) {
         background-color:white;
     }
+
+    #show-modal{
+        text-align:center;
+        background:aliceblue;
+        padding:15px 15px;
+        color: antiquewhite;
+        font-weight: 100;
+        font-size: 1.5em;
+        border-radius: 3.5px;
+        text-decoration: none;
+        transition: all 0.15s linear;
+    }
+    #show-modal:hover{
+        cursor: pointer;
+        background: rebeccapurple;
+
+    }
+   .modal {
+       position: absolute;
+       top: -100vh;
+       left: 0;
+       z-index: 999999999;
+       background: rgba(0, 0, 0, 0.75);
+       width: 100vw;
+       height: 100vh;
+       opacity: 0;
+       transition: opacity 0.35s ease;
+
+   }
+   .modal .content-modal {
+       width: 109%;
+       max-width: 500px;
+       position: fixed;
+       left: 50vh;
+       top: -100vh;
+       transition:top 0.35s ease;
+       margin-left: -250px;
+       background: white;
+       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+       border-radius: 2px;
+       z-index: 999999999;
+   }
+    
+   .modal h2{
+       padding: 0.5em;
+       text-align: center;
+       color: aquamarine;
+       margin: 0;
+
+   }
+   .modal article {
+       height: 300px;
+       background: turquoise;
+   }
+   .close-modal {
+       color: antiquewhite;
+       position: absolute;
+       top: 0.2em;
+       right: 0.375em;
+       margin: 0;
+       padding: 0;
+       font-weight: bold;
+       font-size: 1.5em;
+       text-decoration: none;
+   }
+   .modal a:hover{
+       color: aliceblue;
+   }
+   .modal:target{
+       opacity: 1;
+       top: 0;
+   }
+   .modal .btn-close-modal{
+       position: absolute;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       z-index: 99999991;
+   }
+   .modal:target .content-modal {
+       top: 50px;
+       transition: top 0.35s ease;
+   }
+   @media (max-width: 796px) {
+       .modal .content-modal{
+           width: 90%;
+           max-width: none;
+           left: 5%;
+           margin-left: 0;
+       }
+   }
+
    
 
     </style>
@@ -74,8 +166,29 @@
 <p>Dime por que estas buscando una lágrima en la arena</p>
 <p>Después de un invierno malo</p>
 </div>
-<p>https://www.letras.com/fito-fitipaldis/614056/</p>
-<p>Fito y Fitipaldis</p>
+
+
+<h1>Ventana modal</h1>
+<a href="#modal" id="show-modal">Abrir Ventana</a>
+    <aside id="modal" class="modal">
+     <div class="content-modal">
+      <header>
+       <a href="#" class="close-modal">X</a>
+       <h2>HOLA!</h2>
+      </header>
+      <article>
+        <p>https://www.letras.com/fito-fitipaldis/614056/</p>
+        <p>Fito y Fitipaldis</p>
+      </article>
+     </div>
+     <a href="#" class="btn-close-modal"></a>
+      </aside>
+
+
+
+
+
+
     
 </body>
 </html>
